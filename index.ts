@@ -7,8 +7,8 @@ appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
 
 //
 function classDecorator<T extends { new (...args: any[]): {} }>(
-  constructor:
-) {
+  constructor: T
+){
   return class extends constructor {
     newPropety = "new propety";
     hello = "override";
@@ -24,3 +24,8 @@ class MiSuperClase {
   }
 }
 
+console.log( MiSuperClase )
+
+const miClase = new MiSuperClase();
+
+console.log( miClase.miPropiedad);
